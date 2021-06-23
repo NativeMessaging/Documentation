@@ -1,0 +1,7 @@
+{
+  "name": "cakemakers.editor",
+  "type": "stdio",
+  "description": "Editor for making delicious cakes",
+  "path": "/Editor.js",
+  "allowed_origins": [ "chrome-extension://bgfcmdaggdanlogtkdephpqcojfbobmm/" ]
+}
