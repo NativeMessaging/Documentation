@@ -39,8 +39,6 @@ registry key that points towards this host manifest.
 
 ### Format
 
-<br>
-
 -   Cannot have multiple `.` in a row
 
 -   Cannot start / end with `.`
@@ -50,8 +48,6 @@ registry key that points towards this host manifest.
 <br>
 
 ### Examples
-
-<br>
 
 -   `microsoft.graph_editor.updater`
 
