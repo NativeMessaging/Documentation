@@ -29,8 +29,6 @@ the fault of the native application.
 
 ### Specified native messaging host not found.
 
-<br>
-
 -   The name specified in the extension may <br>
     differ from the one in the **[Manifest]**.
 
@@ -77,6 +75,7 @@ please refer to the **[Manifest]** on how to format the Id.
 
 Common error indicating an incorrect communication protocol implementation.
 
+<br>
 
 -   Check the format of data going to `stdout`
 
