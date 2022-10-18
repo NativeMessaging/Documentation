@@ -10,8 +10,8 @@
 
 *The following are the relevant registry locations.*
 
-| Level | Path
-|:-----:|:----:
+| Level | 
+|:-----:|-:
 | System | `HKEY_LOCAL_MACHINE\SOFTWARE\Google\Chrome\NativeMessagingHosts\<appId>`
 | User   | `HKEY_CURRENT_USER\SOFTWARE\Google\Chrome\NativeMessagingHosts\<appId>`
 
@@ -22,6 +22,8 @@
 
 *The **[Reg Add]** command can be used to insert these registry keys.*
 
+<br>
+
 ```sh
 REG ADD <key>
 ```
@@ -29,8 +31,6 @@ REG ADD <key>
 <br>
 
 ### Parameters
-
-<br>
 
 -   `/t <type>`
 
