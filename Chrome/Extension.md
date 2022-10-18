@@ -25,6 +25,8 @@
 }
 ```
 
+<br>
+
 *[» Check out the example][Example]*
 
 <br>
