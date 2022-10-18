@@ -1,9 +1,11 @@
 
 # Native App
 
-Native applications use **[Manifest]**s to declare <br>
+Native applications use **[Manifest]s** to declare <br>
 their relationship with extensions they want <br>
 to communicate with.
+
+<br>
 
 *[» Check out the example][Example]*
 
@@ -15,6 +17,8 @@ to communicate with.
 The manifest can be placed anywhere but the <br>
 path to the it must be stored in a registry key.
 
+<br>
+
 *[» Check out how to set registry keys][Registry]*
 
 <br>
@@ -22,8 +26,8 @@ path to the it must be stored in a registry key.
 
 ## Linux
 
-| Browser | Level | Location
-|:-------:|:-----:|----------:
+| Browser | Level |  
+|:-------:|:-----:|-:
 | Chromium | System | `/etc/chromium/native-messaging-hosts/<appId>.json`
 | Chromium | User | `~/.config/chromium/NativeMessagingHosts/<appId>.json`
 | Google Chrome | System | `/etc/opt/chrome/native-messaging-hosts/<appId>.json`
@@ -34,8 +38,8 @@ path to the it must be stored in a registry key.
 
 ## OSX
 
-| Browser | Level | Location
-|:-------:|:-----:|----------:
+| Browser | Level |  
+|:-------:|:-----:|-:
 Chromium | System | `/Library/Application Support/Chromium/NativeMessagingHosts/<appId>.json`
 Chromium | User | `~/Library/Application Support/Chromium/NativeMessagingHosts/<appId>.json`
 Google Chrome | System | `/Library/Google/Chrome/NativeMessagingHosts/<appId>.json`
