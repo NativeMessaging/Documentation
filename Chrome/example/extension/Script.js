@@ -1,78 +1,57 @@
-/*
-    Copyright (c) 2021 JDK.FHWS@gmail.com
-*/
 
 
 const { runtime } = chrome;
 
-const port = runtime.connectNative('cakemakers.editor');
+const port = runtime
+    .connectNative('cakemakers.editor');
 
 const { onMessage , onDisconnect } = port;
+
+
+const { log } = console;
 
 
 /*
     Incoming Msg From Port
 */
 
-onMessage.addListener(({ type , data },...args) => {
+onMessage.addListener(({ type , data }, ... args ) => {
 
-  printErrors();
+    printErrors();
 
-  if([ 'log' , 'warn' , 'error' ].includes(type))
-    console[type](...data);
-  else
-    console.log(type ?? '',data);
+    if([ 'log' , 'warn' , 'error' ].includes(type)){
+        console[type](...data);
+        return;
+    }
+
+    log(type ?? '',data);
 });
 
-
-/*
-    Port Disconnects
-*/
 
 onDisconnect.addListener(() => {
 
-  printErrors();
+    printErrors();
 
-  log(`Port Disconnected.`);
-
+    log(`Port Disconnected.`);
 });
 
 
 
-// Send Test Msg
+//  Send Test Msg
 
-console.log('Bake the cakes!')
+log('Bake the cakes!')
 send('Bake the cakes!');
 
 
-/*
-    Send Wrapper
-*/
-
-function send(...args){
-  port.postMessage({
-    data: args
-  });
+function send ( ... data ){
+    port.postMessage({ data });
 }
 
-
-/*
-    Output Errors
-*/
 
 function printErrors(){
 
-  const msg = runtime.lastError?.message;
+    const msg = runtime.lastError?.message;
 
-  if(msg)
-    log(msg);
-}
-
-
-/*
-    Log
-*/
-
-function log(...args){
-  console.log(...args);
+    if(msg)
+        log(msg);
 }

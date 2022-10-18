@@ -1,26 +1,36 @@
+
 # Native Extension
 
-The extension manifest must declare the `nativeMessaging` permission.
+*The extension manifest must declare* <br>
+*the  `nativeMessaging`  permission.*
 
-__Example:__
+<br>
+
+## Example
 
 ```json
-  {
-    "manifest_version": 2,
+{
+    "manifest_version" : 2 ,
 
-    "name": "Native Extension",
-    "version": "1.0.0",
-    "description": "A showcase for native messaging.",
+    "description" : "A showcase for native messaging." ,
+    "version" : "1.0.0" ,
+    "name" : "Native Extension" ,
 
-    "background": {
-      "persistent": true,
-      "scripts": [ "Script.js" ]
+    "background" : {
+        "persistent" : true ,
+        "scripts" : [ "Script.js" ]
     },
 
-    "permissions": [ "nativeMessaging" ]
-  }
-
+    "permissions" : [ "nativeMessaging" ]
+}
 ```
 
+*[» Check out the example][Example]*
 
-Check the [Sample Extension](/example/)
+<br>
+
+
+<!----------------------------------------------------------------------------->
+
+[Example]: example
+

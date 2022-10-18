@@ -1,99 +1,170 @@
 
-# Chrome Host Manifest
+# Host Manifest
 
-The host manifest file describes the relationship<br>
-between an application an browser extensions.
+*The host manifest file describes the relationship* <br>
+*between an application a browser extensions.*
 
+<br>
 
 `My Host Manifest.json`
 
 ```json
-  {
-    "name": "appId",
-    "type": "communicationType",
-    "description": "",
-    "path": "appPath",
-    "allowed_origins": [ "extensionUrl" ]
-  }
-
+{
+    "allowed_origins" : [ "<Extension Url>" ] ,
+    "description" : "" ,
+    "type" : "<Communication Type>" ,
+    "path" : "<App Path>" ,
+    "name" : "<App Id>"
+}
 ```
 
-Check out the [Example Manifest](/example/app/Manifest.json)
+*[» Check out the example][Example]*
 
----
+<br>
+<br>
 
-### Name
-Uniquely identifies an app and is used in<br>
-the extension to connect to one another.
+## Name
 
-For `windows users` the appId will also be the<br>
-name of the `registry key` that points towards<br>
-the host manifest (this).
+*Unique identifier that, in extensions,* <br>
+*is used to connect to one another.*
 
-__Format:__
-* `a - Z`
-* `0 - 9`
-* `.` `_`
-* Cannot start nor end with `.`
-* Cannot have multiple `.` in a row
+<br>
 
-__Examples:__
-* `microsoft.graph_editor.updater`
-* `mike00341.important_project`
-* `cakemakers.editor`
+### Windows
 
+For windows users, the appId is the name of the <br>
+registry key that points towards this host manifest.
 
----
+<br>
 
-### Type
+### Format
 
-The communication interface used.<br>
-Currently only has one valid type.
+<br>
 
-__Types:__
-* `stdio`: Indicates communication with <b>stdin</b> / <b>stdout</b>
+-   Cannot have multiple `.` in a row
 
+-   Cannot start / end with `.`
 
----
+-   `a - Z` `0 - 9` `.` `_`
 
-### Description
+<br>
 
-Describes the native application.
+### Examples
 
+<br>
 
----
+-   `microsoft.graph_editor.updater`
 
-### Path
+-   `mike00341.important_project`
+
+-   `cakemakers.editor`
+
+<br>
+<br>
+
+## Type
+
+*The communication interface used.* <br>
+*Currently only has one valid type.*
+
+<br>
+
+### Types
+
+<br>
+
+-   `stdio`
+    
+    *Indicates communication with `stdin` / `stdout`*
+
+<br>
+<br>
+
+## Description
+
+*A simple description of the native app.*
+
+<br>
+<br>
+
+## Path
 
 System path to the application that will be used<br>
 when in communication with the extension.
 
-Operating System | Path can be relative
-:---: | :---:
-OSX | :x:
-Linux | :x:
-Windows | :heavy_check_mark:
+<br>
 
-`Relative paths` start from the host manifest (this) files path.
+### Relative
 
-__Examples:__
-* Relative: `/Editor.js` (if the manifest is located in the same folder as `Editor.js`)
-* Absolute: `C:/cakeMaker/Editor.js`
+*Relative paths start from this host manifest.*
 
-The host process is started in the folder of it's binary,<br>
-i.e. if the binary is located at `C:\myApplication\App.exe`,<br>
-the current directory will be set to `C:\myApplication\`.
+| OS | Windows | Linux | OSX
+|:--:|:-------:|:-----:|:---:
+|    |    🟢   |   🔴  | 🔴
 
----
+<br>
 
-### Allowed Origins
+### Examples
 
-Limits what extension can communicate with the native app.<br>
-List the extension urls with the following format:
+<br>
 
-`chrome-extension://extensionId/`
+-   #### Relative
 
-The id of your extension can be found at <br>
-`chrome://extensions/` once you have loaded it.
+    `/Editor.js`
+    
+    *With the manifest located in* <br>
+    *the same folder as `Editor.js`*
 
-__Example:__ `chrome-extension://bgfcmdaggdanlogtkdephpqcojfbobmm/`
+    <br>
+
+-   #### Absolute
+
+    `C:/cakeMaker/Editor.js`
+
+<br>
+
+### Process
+
+The current working directory will be set <br>
+to the folder of the binary as it is started.
+
+`C:\myApplication\App.exe` <br>
+⤷ `C:\myApplication\`
+
+<br>
+<br>
+
+## Allowed Origins
+
+*A list of extensions that are allowed* <br>
+*to communicate with the native app.*
+
+<br>
+
+### Format
+
+`chrome-extension://<Extension Id>/`
+
+<br>
+
+### Extension Id
+
+You can find your extension's <br>
+Id at [`chrome://extensions/`]
+
+<br>
+
+### Example
+
+```
+chrome-extension://bgfcmdaggdanlogtkdephpqcojfbobmm/
+```
+
+<br>
+
+
+<!----------------------------------------------------------------------------->
+
+[Example]: example/app/Manifest.json
+
+[`chrome://extensions/`]: `chrome://extensions/`
