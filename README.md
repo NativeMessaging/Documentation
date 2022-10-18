@@ -38,7 +38,7 @@
 [Manifest]: Chrome/Host%20Manifest.md
 [Registry]: Chrome/Registry.md
 [Errors]: Chrome/Errors.md
-[Native]: Chrome/Native.md
+[Native]: Chrome/App.md
 
 
 <!---------------------------------[ Buttons ]--------------------------------->
